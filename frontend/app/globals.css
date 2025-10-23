@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+/* Document Preview Styles */
+.prose {
+  color: #1a1a1a;
+  max-width: 65ch;
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  line-height: 1.75;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  color: #111827;
+  font-weight: 700;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  line-height: 1.3;
+}
+
+.prose h1 {
+  font-size: 2.25em;
+  margin-top: 0;
+}
+
+.prose h2 {
+  font-size: 1.75em;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.prose h3 {
+  font-size: 1.5em;
+}
+
+.prose h4 {
+  font-size: 1.25em;
+}
+
+.prose p {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  text-align: justify;
+}
+
+.prose ol,
+.prose ul {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  padding-left: 1.625em;
+}
+
+.prose li {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose mark {
+  background-color: #fef3c7;
+  border-bottom: 2px solid #f59e0b;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.125rem;
+  font-weight: 600;
+  color: #92400e;
+}
+
+.prose strong {
+  font-weight: 700;
+  color: #111827;
+}
+
+.prose em {
+  font-style: italic;
+}
+
+.prose blockquote {
+  font-style: italic;
+  border-left: 4px solid #e5e7eb;
+  padding-left: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  color: #6b7280;
+}
+
+/* NDA Document Specific Styles */
+.prose .signature-block {
+  margin-top: 3em;
+  page-break-inside: avoid;
+}
+
+.prose .witness-block {
+  margin-top: 2em;
+  margin-left: 3em;
+}
+
+/* Print styles */
+@media print {
+  .prose {
+    font-size: 12pt;
+  }
+  
+  .prose mark {
+    background-color: transparent;
+    border-bottom: 1px solid #000;
+  }
+}

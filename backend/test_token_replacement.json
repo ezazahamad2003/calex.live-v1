@@ -1,0 +1,18 @@
+{
+  "template_id": "761c6656-a865-4f0c-927d-0d375df37d62",
+  "client_name": "Test User",
+  "client_email": "test@example.com",
+  "answers": {
+    "DATE": "2025-10-22",
+    "PARTY1_NAME": "Test Corp Inc.",
+    "PARTY1_JURIS": "California",
+    "PARTY1_TYPE": "corporation",
+    "PARTY1_ADDRESS": "456 Test Ave, San Francisco, CA",
+    "PARTY2_NAME": "Test Partners LP",
+    "PARTY2_JURIS": "Texas",
+    "PARTY2_TYPE": "limited partnership",
+    "PARTY2_ADDRESS": "789 Partner Blvd, Austin, TX",
+    "PURPOSE": "Test the token replacement system"
+  }
+}
+
