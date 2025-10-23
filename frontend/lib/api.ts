@@ -58,8 +58,10 @@ export interface CaseDetail {
     updated_at: string;
   };
   answers: Array<{ key: string; value: string }>;
-  preview_html_url: string;
-  docx_url: string;
+  preview_html_url?: string;
+  docx_url?: string;
+  preview_url?: string;  // For client endpoints
+  download_url?: string; // For client endpoints
 }
 
 // ============================================================================
