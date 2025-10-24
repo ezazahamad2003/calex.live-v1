@@ -146,8 +146,6 @@ async def create_case(
     
     🔒 **Authentication Required**: Client must be logged in via Supabase Auth.
     
-    💎 **Free Quota**: Each user gets 1 free NDA. Additional NDAs require payment.
-    
     Payload format:
     {
         "template_id": "uuid",
@@ -165,23 +163,8 @@ async def create_case(
         
     Raises:
         401: If not authenticated
-        402: If free quota exceeded (payment required)
     """
-    # ✅ Check quota: count existing cases for this user
-    existing_cases = supa().table("cases").select(
-        "id", count="exact"
-    ).eq("client_user_id", user_id).execute()
-    
-    if existing_cases.count >= 1:
-        raise HTTPException(
-            status_code=402,
-            detail={
-                "error": "free_quota_exceeded",
-                "message": "You've used your free NDA. Payment required for additional NDAs.",
-                "cases_created": existing_cases.count,
-                "quota_limit": 1
-            }
-        )
+    # Quota check removed - unlimited NDAs allowed
     
     # Get template
     tpl = supa().table("templates").select("*").eq("id", payload["template_id"]).single().execute().data
