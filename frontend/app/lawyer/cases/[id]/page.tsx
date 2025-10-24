@@ -34,10 +34,12 @@ export default function CaseDetailPage() {
       const data = await getLawyerCaseDetail(caseId, key);
       setCaseDetail(data);
       
-      // Fetch the HTML content for preview
-      const htmlResponse = await fetch(data.preview_html_url);
-      const html = await htmlResponse.text();
-      setHtmlContent(html);
+      // Fetch the HTML content for preview if URL is available
+      if (data.preview_html_url) {
+        const htmlResponse = await fetch(data.preview_html_url);
+        const html = await htmlResponse.text();
+        setHtmlContent(html);
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to load case');
     } finally {
